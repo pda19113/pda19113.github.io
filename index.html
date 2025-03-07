@@ -10,7 +10,16 @@
         if (sound) sound.playSound();
       }
     });
-     </script>
+    AFRAME.registerComponent('flyinng', {
+      tick: function() {
+        if(Math.random() < 0.5) return;
+        var x = Math.random() *100 - 50;
+        var y = Math.random() *3 +3;
+        var z = math.random() *100 -50;
+        this.el.setAttribute('animation', 'property: position; to: ' + x + ' ' + y + ' ' + z);
+      }
+    });
+ </script>
   <body>
     <a-scene id="s1" background="color:#0d0928" fog= "far:300" shadow= "type: pcfsoft">
     <a-camera position="0 3 0"></a-camera>
@@ -66,6 +75,7 @@
      bee.setAttribute('rotation ' , ' 0 ' + r + ' 0 ');
      bee.setAttribute('sound', 'scr:#bzzz; volume: 0.1; poolSize: 10');
      bee.setAttribute('sounding' , ' ');
+    bee.setAttribute(' flying', '');
     scene1.appendChild(bee);
   }
 </script>
