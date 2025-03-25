@@ -123,17 +123,17 @@
     for (var j = -350; j <= 350; j+= 100){
       if (Math.abs(i) <200 && Math.abs(j) < 200) continue ;
       var p = document.getElementById('pavement').cloneNode(true);
-      P.setAttribute('position' , i + ' 0.25 ' + j);
+      p.setAttribute('position' , i + ' 0.25 ' + j);
       p.setAttribute('visible' , 'true' );
       scene1.appendChild(p);
  var box = document.createElement('a-box');
       var h = Math.ceil(Math.random() * 6);
       box.setAttribute('src' , "#b" + h);
       box.setAttribute('repeat' , '1 ' + Math.ceil(h / 2));
-      box.setAttribute('scale' , '60 ' + (30 * (h + 1) + ' 60 ');
+      box.setAttribute('scale' , '60 ' + (30 * (h + 1)) + ' 60 ');
       box.setAttribute('position' , i + ' ' + ((h + 1) * 15 + 10.5) + ' ' + j);
       box.setAttribute('shadow' , ' ');
-      box.setAttribute(' colliding' , '');
+      box.setAttribute('colliding' , '');
       scene1.appendChild(box);
     }
     }
