@@ -2,7 +2,65 @@
   <head>
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://c-frame.github.io./aframe-physics-system/dist/aframe-physics-system.js"></script>
+ <script>
+   var ghosts = 25, coords;
+   function toggle(t, s) {
+     document.querySelector('a-scene').setAttribute('fog', 'far:1');
+     document.getElementById('txt').setAttribute('text','value:' + t);
+     setTimeout(function () {
+       document.getElementById('cam1').setAttribute('active','false');
+       document.getElementById('cam2').setAttribute('active','true');
+     }, 3000);
+     setTimeout(function(){
+       document.getElementById('txt').setAttribute('position', '0 0 1');
+       document.getquerySelector('a-scene').setAttribute('fog', 'near: 2');
+     },6000);
+     document.getElementById('player').setAttribute('src', s);
+     document.getElementbyId('player').components.sound.playSound();
+   }
+   AFRAME.registerComponent('colliding' , {
+     init:function () {
+       coords=document.getElementById('cam1');
+       document.querySelector('a-scene').addEventListener('enter-vr',function () { coords = document.getElementById('rig'); });
+     document.querySelector('a-scene').addEventListener('exit-vr', function () { coords = document.getElementById('cam1'); });
+     },
+     tick: function () {
+       var pos1 = coords.getAttribute('position');
+       var pos2 = this.el.getAttribute('position');
+       if (Math.abs(pos1.x - pos2.x) < 40 && Math.abs(pos1.z - pos2.z) < 40) toggle('GAME OVER', '#explode');
+
+         var rot = document.getElementById('spacecraft').getAttribute('rotation');
+       var distance = Math.sqrt(pos1.x * pos1.x + pos1.z * pos1.z);
+       var angle = Math.atan2(pos1.x, pos1.z) * 180 / Math.PI;
+       if (angle < 0) angle = 360 + angle;
+         if ((Math.abs(rot.y - angle) < 30 || Math.abs(rot.y - angle) > 345) && distance < 250) toggle('GAME OVER' , '#police');
+     }
+   });
+  
+ </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   </head>
+
+
 
 
 
