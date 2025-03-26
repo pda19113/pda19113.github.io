@@ -39,19 +39,32 @@
          if ((Math.abs(rot.y - angle) < 30 || Math.abs(rot.y - angle) > 345) && distance < 250) toggle('GAME OVER' , '#police');
      }
    });
-  
  </script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <script>
+    AFRAME.registerComponent('ghosting' , {
+      init: function () {
+        this.el.addEventListener('mouseenter' , function () {
+          document.getElementById('shot').components.sound.playSound();
+          document.getElementById('laser').setAttribute('line' , 'start: 0 -0.1 0; end: 0 0 -1; color:lime');
+        });
+        this.el.addEventListener('mouseleave' , function () {
+          document.getElementById('laser').removeAttribute('line');
+          this.remove(); ghosts--;
+          if (ghosts <= 0) toggle('WELL DONE' , '#scream');
+        });
+      },
+      tick: function () {
+        if (Math.random() < 0.99) return;
+          var x = Math.random() * 700 - 350;
+        var y = Math.random() * 50 + 10;
+        var z = Math.random() * 700 - 350;
+        this.el.setAttribute('animation', 'property: position; to: ' + x + ' ' + y + ' ' +z);
+      }
+    });
+  </script>
+        
+        
+      
   
   
   
@@ -63,63 +76,8 @@
   
   </head>
 
-
-
-
-
-  
   <body>
 <a-scene>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <a-assets>
       <a-asset-item id="tree" src="tree.glb"></a-asset-item>
@@ -201,7 +159,21 @@
   </script>
 
  
-
+<script>
+  for (var i = 0; i < ghosts; i++) {
+    var ghost = document.createElement('a-entity');
+    var x = Math.random() * 700 - 350;
+    var y = Math.random() * 50 + 10;
+    var z = Math.random() * 700 - 350;
+    var r = Math.random() * 360;
+    ghost.setAttribute('gltf-model', '#ghost');
+    ghost.setAttribute('position', x + ' ' + y + ' ' + z);
+    ghost.setAttribute('rotation', '0 ' + r + ' 0');
+    ghost.setAttribute('scale', '100 100 100 100');
+    ghost.setAttribute('ghosting' , '');
+    scene1.appendChild(ghost);
+  }
+</script>
 
 
 
