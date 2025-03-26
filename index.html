@@ -13,10 +13,10 @@
      }, 3000);
      setTimeout(function(){
        document.getElementById('txt').setAttribute('position', '0 0 1');
-       document.getquerySelector('a-scene').setAttribute('fog', 'near: 2');
+       document.querySelector('a-scene').setAttribute('fog', 'near: 2');
      },6000);
      document.getElementById('player').setAttribute('src', s);
-     document.getElementbyId('player').components.sound.playSound();
+     document.getElementById('player').components.sound.playSound();
    }
    AFRAME.registerComponent('colliding' , {
      init:function () {
