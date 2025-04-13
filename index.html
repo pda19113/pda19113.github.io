@@ -20,26 +20,7 @@
      document.getElementById('player').components.sound.playSound();
    }
  </script>
-    <script>
-   AFRAME.registerComponent('colliding' , {
-     init:function () {
-       coords=document.getElementById('cam1');
-       document.querySelector('a-scene').addEventListener('enter-vr',function () { coords = document.getElementById('rig'); });
-     document.querySelector('a-scene').addEventListener('exit-vr', function () { coords = document.getElementById('cam1'); });
-     },
-     tick: function () {
-       var pos1 = coords.getAttribute('position');
-       var pos2 = this.el.getAttribute('position');
-       if (Math.abs(pos1.x - pos2.x) < 40 && Math.abs(pos1.z - pos2.z) < 40) toggle('GAME OVER', '#explode');
-
-         var rot = document.getElementById('spacecraft').getAttribute('rotation');
-       var distance = Math.sqrt(pos1.x * pos1.x + pos1.z * pos1.z);
-       var angle = Math.atan2(pos1.x, pos1.z) * 180 / Math.PI;
-       if (angle < 0) angle = 360 + angle;
-         if ((Math.abs(rot.y - angle) < 30 || Math.abs(rot.y - angle) > 345) && distance < 250) toggle('GAME OVER' , '#police');
-     }
-   });
- </script>
+   
   <script>
     AFRAME.registerComponent('ghosting' , {
       init: function () {
