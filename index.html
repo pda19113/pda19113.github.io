@@ -65,12 +65,12 @@
       <a-asset-item id="ghost" src="scene.gltf"></a-asset-item>
       <img id="stars" src="mordor.jpg">
       <img id="mars" src="mars.jpg">
-      <img id="b1" src="b1.png">
-      <img id="b2" src="b2.png">
-      <img id="b3" src="b3.png">
-      <img id="b4" src="b4.png">
-      <img id="b5" src="b5.png">
-      <img id="b6" src="b6.png">
+      <img id="bu1" src="bu1.jpg">
+      <img id="bu2" src="bu2.jpg">
+      <img id="bu3" src="bu3.jpg">
+      <img id="bu4" src="bu4.jpg">
+      <img id="bu5" src="bu5.jpg">
+      <img id="bu6" src="bu6.jgp">
       <audio id="gun" src="mixkit-short-laser-gun-shot-1670.wav"></audio>
       <audio id="explode" src="mixkit-explosion-in-battle-2809.wav"></audio>
       <audio id="police" src="mixkit-police-siren-us-1643.wav"></audio>
@@ -127,7 +127,7 @@
       scene1.appendChild(p);
  var box = document.createElement('a-box');
       var h = Math.ceil(Math.random() * 6);
-      box.setAttribute('src' , "#b" + h);
+      box.setAttribute('src' , "#bu" + h);
       box.setAttribute('repeat' , '1 ' + Math.ceil(h / 2));
       box.setAttribute('scale' , '60 ' + (30 * (h + 1)) + ' 60 ');
       box.setAttribute('position' , i + ' ' + ((h + 1) * 15 + 10.5) + ' ' + j);
