@@ -4,7 +4,7 @@
     <script src="https://c-frame.github.io./aframe-physics-system/dist/aframe-physics-system.js"></script>
     
  <script>
-   var ghosts = 25, coords;
+   var demon = 25, coords;
    function toggle(t, s) {
      document.querySelector('a-scene').setAttribute('fog', 'far:1');
      document.getElementById('txt').setAttribute('text','value:' + t);
@@ -26,7 +26,7 @@
       init: function () {
         this.el.addEventListener('mouseenter' , function () {
           document.getElementById('shot').components.sound.playSound();
-          document.getElementById('laser').setAttribute('line' , 'start: 0 -0.1 0; end: 0 0 -1; color:lime');
+          document.getElementById('laser').setAttribute('line' , 'start: 0 -0.1 0; end: 0 0 -1; color:red');
         });
         this.el.addEventListener('mouseleave' , function () {
           document.getElementById('laser').removeAttribute('line');
@@ -62,10 +62,10 @@
 
     <a-assets>
       <a-asset-item id="tree" src="tree.glb"></a-asset-item>
-      <a-asset-item id="ghost" src="ghost.gltf"></a-asset-item>
+      <a-asset-item id="demon" src="doom demon.gltf"></a-asset-item>
       <a-asset-item id="craft" src="spacecraft.glb"></a-asset-item>
       <img id="stars" src="mordor.jpg">
-      <img id="mars" src="mars.jpg">
+      <img id=" el mars" src="mars.jpg">
       <img id="b1" src="b1.png">
       <img id="b2" src="b2.png">
       <img id="b3" src="b3.png">
@@ -78,7 +78,7 @@
       <audio id="scream" src="mixkit-battle-man-scream-2175.wav"></audio>  
     </a-assets>
     <a-sky radius="5000" src="#stars" animation="property: rotation; to: 0 90 -30; dur: 20000"></a-sky>
-    <a-sphere radius="1000" src="#mars" animation="property: rotation; to: -30 360 0; dur: 30000"></a-sphere>
+    <a-sphere radius="1000" src="#el mars" animation="property: rotation; to: -30 360 0; dur: 30000"></a-sphere>
     <a-ring color="black" radius-inner="0" radius-outer="990" rotation="-90 0 0"></a-ring>
     <a-entity id="rig" position="0 -20 4900" animation="property: position; to: 0 10 0; dur: 30000; easing: easeInOutQuad">
       <a-camera id="cam1" wasd-controls="acceleration: 500">
@@ -142,7 +142,7 @@
  
 <script>
   for (var i = 0; i < ghosts; i++) {
-    var ghost = document.createElement('a-entity');
+    var demon = document.createElement('a-entity');
     var x = Math.random() * 700 - 350;
     var y = Math.random() * 50 + 10;
     var z = Math.random() * 700 - 350;
