@@ -1,7 +1,7 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://c-frame.github.io./aframe-physics-system/dist/aframe-physics-system.js"></script>
+    <script src="https://c-frame.github.io/aframe-physics-system/dist/aframe-physics-system.js"></script>
     
  <script>
    var ghosts = 25, coords;
@@ -30,7 +30,7 @@
         });
         this.el.addEventListener('mouseleave' , function () {
           document.getElementById('laser').removeAttribute('line');
-          this.remove(); demons--;
+          this.remove(); ghosts--;
           if (demons <= 0) toggle('WELL DONE' , '#scream');
         });
       },
@@ -146,7 +146,7 @@
     var y = Math.random() * 50 + 10;
     var z = Math.random() * 700 - 350;
     var r = Math.random() * 360;
-    ghost.setAttribute('gltf-model', '#doomdemon');
+    ghost.setAttribute('gltf-model', '#ghost.gltf');
     ghost.setAttribute('position', x + ' ' + y + ' ' + z);
     ghost.setAttribute('rotation', '0 ' + r + ' 0');
     ghost.setAttribute('scale', '100 100 100 100');
