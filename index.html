@@ -4,7 +4,7 @@
     <script src="https://c-frame.github.io/aframe-physics-system/dist/aframe-physics-system.js"></script>
     
  <script>
-   var ghosts = 25, coords;
+   var demons = 25, coords;
    function toggle(t, s) {
      document.querySelector('a-scene').setAttribute('fog', 'far:1');
      document.getElementById('txt').setAttribute('text','value:' + t);
@@ -61,8 +61,9 @@
 <a-scene>
 
     <a-assets>
+      <a-assets-item id="demon" src="https://raw.githubusercontent.com/pda19113/pda19113.github.io/refs/heads/main/scene.gltf"></a-assets-item>
       <a-asset-item id="tree" src="tree.glb"></a-asset-item>
-      <a-asset-item id="ghost" src="ghost.gltf"></a-asset-item>
+     
       <img id="stars" src="mordor.jpg">
       <img id="mars" src="mars.jpg">
       <img id="bu1" src="bu1.jpg">
@@ -140,13 +141,13 @@
 
  
 <script>
-  for (var i = 0; i < ghosts; i++) {
-    var ghost = document.createElement('a-entity');
+  for (var i = 0; i < demons; i++) {
+    var demon = document.createElement('a-entity');
     var x = Math.random() * 700 - 350;
     var y = Math.random() * 50 + 10;
     var z = Math.random() * 700 - 350;
     var r = Math.random() * 360;
-    ghost.setAttribute('gltf-model', '#ghost');
+    ghost.setAttribute('gltf-model', '#demon');
     ghost.setAttribute('position', x + ' ' + y + ' ' + z);
     ghost.setAttribute('rotation', '0 ' + r + ' 0');
     ghost.setAttribute('scale', '100 100 100 100');
