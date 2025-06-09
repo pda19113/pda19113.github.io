@@ -30,8 +30,8 @@
         });
         this.el.addEventListener('mouseleave' , function () {
           document.getElementById('laser').removeAttribute('line');
-          this.remove(); demon--;
-          if (demon <= 0) toggle('WELL DONE' , '#scream');
+          this.remove(); demons--;
+          if (demons <= 0) toggle('WELL DONE' , '#scream');
         });
       },
       tick: function () {
@@ -62,7 +62,7 @@
 
     <a-assets>
       <a-asset-item id="tree" src="tree.glb"></a-asset-item>
-      <a-asset-item id="demon" src="doom demon.gltf"></a-asset-item>
+      <a-asset-item id="demon" src="doomdemon.gltf"></a-asset-item>
       <img id="stars" src="mordor.jpg">
       <img id="mars" src="mars.jpg">
       <img id="b1" src="b1.png">
@@ -140,13 +140,13 @@
 
  
 <script>
-  for (var i = 0; i < demon; i++) {
+  for (var i = 0; i < demons; i++) {
     var demon = document.createElement('a-entity');
     var x = Math.random() * 700 - 350;
     var y = Math.random() * 50 + 10;
     var z = Math.random() * 700 - 350;
     var r = Math.random() * 360;
-    demon.setAttribute('glb', '#doom_cacedemon');
+    demon.setAttribute('gltf-model', '#doomdemon');
     demon.setAttribute('position', x + ' ' + y + ' ' + z);
     demon.setAttribute('rotation', '0 ' + r + ' 0');
     demon.setAttribute('scale', '100 100 100 100');
