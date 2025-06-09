@@ -64,8 +64,8 @@
       <a-asset-item id="tree" src="tree.glb"></a-asset-item>
       <a-asset-item id="ghost" src="ghost.gltf"></a-asset-item>
       <a-asset-item id="craft" src="spacecraft.glb"></a-asset-item>
-      <img id="stars" src="eso0932a.jpg">
-      <img id="earth" src="flat_earth03.jpg">
+      <img id="stars" src="mordor.jpg">
+      <img id="mars" src="mars.jpg">
       <img id="b1" src="b1.png">
       <img id="b2" src="b2.png">
       <img id="b3" src="b3.png">
@@ -78,11 +78,11 @@
       <audio id="scream" src="mixkit-battle-man-scream-2175.wav"></audio>  
     </a-assets>
     <a-sky radius="5000" src="#stars" animation="property: rotation; to: 0 90 -30; dur: 20000"></a-sky>
-    <a-sphere radius="1000" src="#earth" animation="property: rotation; to: -30 360 0; dur: 30000"></a-sphere>
+    <a-sphere radius="1000" src="#mars" animation="property: rotation; to: -30 360 0; dur: 30000"></a-sphere>
     <a-ring color="black" radius-inner="0" radius-outer="990" rotation="-90 0 0"></a-ring>
     <a-entity id="rig" position="0 -20 4900" animation="property: position; to: 0 10 0; dur: 30000; easing: easeInOutQuad">
       <a-camera id="cam1" wasd-controls="acceleration: 500">
-        <a-cursor color="blue" animation="property: visible; to: true; dur: 30000"></a-cursor>
+        <a-cursor color="red" animation="property: visible; to: true; dur: 30000"></a-cursor>
         <a-entity id="laser"></a-entity>
         <a-sound id="shot" src="#gun"></a-sound>
         <a-sound id="player"></a-sound>
