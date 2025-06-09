@@ -61,7 +61,7 @@
 <a-scene>
 
     <a-assets>
-      <a-assets-item id="demon" src="https://raw.githubusercontent.com/pda19113/pda19113.github.io/refs/heads/main/scene.gltf"></a-assets-item>
+      <a-asset-item id="demon" src="https://raw.githubusercontent.com/pda19113/pda19113.github.io/refs/heads/main/scene.gltf"></a-asset-item>
       <a-asset-item id="tree" src="tree.glb"></a-asset-item>
      
       <img id="stars" src="mordor.jpg">
@@ -91,9 +91,7 @@
     </a-entity>
     <a-light intensity="0.025" type="ambient"></a-light>
     <a-light intensity="0.05" position="0 1 1"></a-light>
-    <a-entity id="spacecraft" gltf-model="#doom_cacodemon" scale="10 10 10"
-      animation="property: position; from: 0 66 0; to: 0 77 0; dur: 21000; dir: alternate; loop: true"
-      animation__2="property: rotation; from: 0 0 0; to: 0 360 0; dur: 39000; dir: alternate; loop: true">
+    
       <a-entity light="type: spot; penumbra: 0.5; distance: 200; castShadow: true" position="0 -1 5" rotation="0 180 0"></a-entity>
       <a-camera id="cam2" position="0 3 6" wasd-controls="enable: false" look-controls="enable: false" active="false">
         <a-entity text="front: https://cdn.aframe.io/fronts/mozillavr.fnt" id="txt" position="0.4 0 -0.2"></a-entity>
@@ -147,12 +145,12 @@
     var y = Math.random() * 50 + 10;
     var z = Math.random() * 700 - 350;
     var r = Math.random() * 360;
-    ghost.setAttribute('gltf-model', '#demon');
-    ghost.setAttribute('position', x + ' ' + y + ' ' + z);
-    ghost.setAttribute('rotation', '0 ' + r + ' 0');
-    ghost.setAttribute('scale', '100 100 100 100');
-    ghost.setAttribute('ghosting' , '');
-    scene1.appendChild(ghost);
+    demon.setAttribute('gltf-model', '#demon');
+    demon.setAttribute('position', x + ' ' + y + ' ' + z);
+    demon.setAttribute('rotation', '0 ' + r + ' 0');
+    demon.setAttribute('scale', '100 100 100 100');
+    demon.setAttribute('ghosting' , '');
+    scene1.appendChild(demon);
   }
 </script>
 
