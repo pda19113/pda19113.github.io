@@ -62,7 +62,7 @@
 
     <a-assets>
       <a-asset-item id="tree" src="tree.glb"></a-asset-item>
-      <a-asset-item id="demon" src="doomdemon.gltf"></a-asset-item>
+      <a-asset-item id="ghost" src="doomdemon.gltf"></a-asset-item>
       <img id="stars" src="mordor.jpg">
       <img id="mars" src="mars.jpg">
       <img id="b1" src="b1.png">
@@ -140,18 +140,18 @@
 
  
 <script>
-  for (var i = 0; i < demons; i++) {
-    var demon = document.createElement('a-entity');
+  for (var i = 0; i < ghosts; i++) {
+    var ghost = document.createElement('a-entity');
     var x = Math.random() * 700 - 350;
     var y = Math.random() * 50 + 10;
     var z = Math.random() * 700 - 350;
     var r = Math.random() * 360;
-    demon.setAttribute('gltf-model', '#doomdemon');
-    demon.setAttribute('position', x + ' ' + y + ' ' + z);
-    demon.setAttribute('rotation', '0 ' + r + ' 0');
-    demon.setAttribute('scale', '100 100 100 100');
-    demon.setAttribute('ghosting' , '');
-    scene1.appendChild(demon);
+    ghost.setAttribute('gltf-model', '#doomdemon');
+    ghost.setAttribute('position', x + ' ' + y + ' ' + z);
+    ghost.setAttribute('rotation', '0 ' + r + ' 0');
+    ghost.setAttribute('scale', '100 100 100 100');
+    ghost.setAttribute('ghosting' , '');
+    scene1.appendChild(ghost);
   }
 </script>
 
