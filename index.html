@@ -30,7 +30,7 @@
         });
         this.el.addEventListener('mouseleave' , function () {
           document.getElementById('laser').removeAttribute('line');
-          this.remove(); ghosts--;
+          this.remove(); demons--;
           if (demons <= 0) toggle('WELL DONE' , '#scream');
         });
       },
